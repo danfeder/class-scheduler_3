@@ -1,0 +1,19 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Storage Inspector</title>
+</head>
+<body>
+    <pre id='output'></pre>
+    <script>
+        const output = document.getElementById('output');
+        const items = {};
+        for (let i = 0; i < localStorage.length; i++) {
+            const key = localStorage.key(i);
+            items[key] = localStorage.getItem(key);
+        }
+        output.textContent = JSON.stringify(items, null, 2);
+    </script>
+</body>
+</html>
